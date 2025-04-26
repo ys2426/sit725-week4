@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT 725 Prac 3</title>
+    <meta name="description" content="basic template for SIT 725 Prac 3">
+    <meta name="author" content="SitePoint">
+    <meta property="og:title" content="SIT 725 Prac 3">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="basic template for SIT 725 Prac 3">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Custom Style Sheet-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper navbar-size">
+            <a href="#" class="brand-logo"><img class="user-image-size" src="images/user.jpg" /></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a target="_blank" href="https://www.linkedin.com/in/navit-choudhary-5133b9104/">LinkedIn</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Welcome to SIT 725 Week 3</h1>
+    <p>This is a demo application that tries to use a few components from materialize and through the practical we try to have some fun with materialize and its components</p>
+    <img src="images/maths.jpg" alt="LIVE DEMO" width="300" height="300">
+    <div><button id="clickMe" class="waves-effect waves-light btn modal-trigger" data-target="modal1">CLICK ME</button>
+        <button id="delete-all-cards" class="btn red">Delete All Cards</button>
+    </div>
+    
+    <div class="container" id="card-section">
+        <!-- Cards will be appended here -->
+    </div>
+
+    <main>
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="row modal-content">
+                <form class="col s12" id="card-form">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input  id="title" type="text" class="validate" name="title">
+                            <label for="title">Title</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="image" type="text" class="validate" name="image">
+                            <label for="image">Image URL</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="link" type="text" class="validate" name="link">
+                            <label for="link">Link</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="description" type="text" class="validate" name="description">
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 center-align">
+                            <button class="waves-effect waves-light btn" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
