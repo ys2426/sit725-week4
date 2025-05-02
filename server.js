@@ -1,6 +1,9 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const path = require('path');
+const socketIo = require('socket.io');
+const http = require('http');
+
 
 const app = express();
 const port = 3002;
@@ -85,7 +88,23 @@ async function getAllCards() {
     }
 }
 
+const server = http.createServer(app);        // create HTTP server
+const io = socketIo(server);                  // initialize socket.io with the HTTP server
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+    
+    // Generate and send a random number to the client
+    const randomNumber = Math.floor(Math.random() * 10);
+    console.log(`sent number: ${randomNumber}`);
+    socket.emit('randomNumber', randomNumber);
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+});
+
 // Start the server
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

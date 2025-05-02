@@ -77,5 +77,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    const socket = io();
+
+    socket.on('randomNumber', (number) => {
+        console.log('Received number from server:', number);
+        // Optionally display it on the page
+        // const h1 = document.createElement('h1');
+        // h1.innerText = `Random Number: ${number}`;
+        // document.body.appendChild(h1);
+    });
+    </script>
+
 </body>
 </html>
